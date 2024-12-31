@@ -1,0 +1,13 @@
+package practices;
+import java.util.*;
+public class Solution {
+	int sum = 0;
+	public int solution(int n) {
+		if (n <= 100000000) {
+			String nToString = String.valueOf(n);	// 변수 n의 리터럴을 string 변수에 저장
+			for (int temp : nToString.toCharArray()) {	// for-each문/ string 변수를 charArray에 저장: 리터럴의 각 자릿수가 인덱스에 순차적으로 하나씩 저장 됨.
+				sum += Character.getNumericValue(temp);	// Character.getNumericValue(): charArray 인덱스에 저장된 값을 하나씩 불러와 numeric value로 변환 및 sum에 가산
+			}
+		}
+		return sum;
+	}
