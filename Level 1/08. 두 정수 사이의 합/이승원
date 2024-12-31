@@ -1,0 +1,15 @@
+class Solution {
+	public long solution(long a, long b) {
+		long sum = 0;
+		long temp = 0;
+		if (a > b) {
+			temp = b;
+			b = a;
+			a = temp;
+		}
+		for (long i = a; i <= b; i++) {
+			sum += i;
+		}
+		return sum;
+	}
+}
