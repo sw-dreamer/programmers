@@ -1,0 +1,15 @@
+package programmers.lib;
+
+
+import java.util.Arrays;
+import java.util.Collections;
+
+
+public class Solution {
+	public long solution(long n) {
+       String[] s = String.valueOf(n).split("");
+       Arrays.sort(s, Collections.reverseOrder());
+       long answer = Long.parseLong(String.join("", s));
+       return answer;
+   }
+}
