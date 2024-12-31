@@ -1,3 +1,4 @@
+```java
 class Solution {
 	public int solution(int n) {
 		int sum = n;
