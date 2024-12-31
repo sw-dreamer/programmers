@@ -1,0 +1,8 @@
+class Solution {
+	String answer = null;
+	public String solution(int num) {
+		if(num % 2 == 0 || num == 0) {
+			return answer = "Even";
+		}return answer = "Odd";		
+   }
+}
