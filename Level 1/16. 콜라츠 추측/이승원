@@ -1,0 +1,17 @@
+class Solution {
+	public int solution(int num) {
+		long longNum = num;	// 오버플로우가 발생할 가능성에 대비해 long 형으로 변환(오버플로우로 인해 음수로 변환되면 무한 루프에 빠짐)
+		int iteration = 0;
+		while (iteration <= 500) {	// 반복 횟수 500번 이하로 제한
+			if (longNum == 1) {
+				return iteration;	// 반복 횟수 반환
+			} else if (longNum % 2 == 0) {	// 짝수일 경우
+				longNum = longNum / 2;
+			} else {	// 홀수일 경우
+				longNum = (longNum * 3) + 1;
+			}
+			iteration++;	// 매 반복마다 반복 횟수 가산
+		}
+		return -1;	// 반복 횟수 500번을 초과한 경우 -1 반환
+	}
+}
