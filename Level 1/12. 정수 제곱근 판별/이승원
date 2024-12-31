@@ -1,0 +1,15 @@
+package practices;
+class Solution {
+   public long solution(long n) {
+   	double squareRoot = Math.sqrt(n);	// n의 제곱근 구하기
+   	long squareRootPlusOne = 0;
+   	
+   	if(squareRoot == Math.floor(squareRoot)) {	// Math.floor(double e) : Returns the largest integer less than or equal to the result.
+   		// 즉, n의 제곱근이 정수인지 판별하는 식
+   		squareRootPlusOne = (long)squareRoot + 1;
+   		return squareRootPlusOne * squareRootPlusOne;
+   	}else {
+   		return -1;
+   	}
+   }
+}
