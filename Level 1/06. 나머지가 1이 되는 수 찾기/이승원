@@ -1,0 +1,17 @@
+class Solution {
+   public int solution(int n) {
+       int min = 1000000;
+      
+       boolean flag = (3<=n && n<=1000000);
+      
+       while(flag) {
+           for(int i = 1 ; i<n ; i++){
+               if(n%i == 1 && i<=min){
+                   min = i;
+               }
+           }
+           flag = false;
+       }
+       return min;
+   }
+}
