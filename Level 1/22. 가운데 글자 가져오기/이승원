@@ -1,0 +1,18 @@
+package programmers.lib;
+
+public class Solution {
+	public String solution(String s) {
+		String answer = "";
+		int sLength = 0;
+
+		sLength = s.length();
+		String[] sStringArrays = s.split("");
+
+		if (sLength % 2 == 1 || sLength == 1) {
+			answer = sStringArrays[(int) (Math.ceil(sLength)) / 2];
+		} else {
+			answer = sStringArrays[sLength/2 -1] + sStringArrays[sLength/2];
+		}
+		return answer;
+	}
+}
