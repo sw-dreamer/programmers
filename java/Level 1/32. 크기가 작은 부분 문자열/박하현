@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(String t, String p) {
+		String st = "";
+		long  min = Math.min(t.length(), p.length());
+		long intp = Long.parseLong(p);
+		int answer = 0 ;
+		for(int i = 0 ; i < t.length()-p.length()+1 ; i++){
+		    st = t.substring(i, i+p.length());
+		    Long answerint = Long.parseLong(st);
+            if(intp >= answerint){
+				 answer++;
+			 }
+    }return answer;
+  } 
+}
