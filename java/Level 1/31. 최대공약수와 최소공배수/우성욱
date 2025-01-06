@@ -1,0 +1,31 @@
+class Solution {
+		public static int gcd(int a, int b) {
+			if (b == 0) {
+				return a;
+			}
+			return gcd(b, a % b);
+		}
+
+		public int[] solution(int n, int m) {
+			int[] answer = new int[2];
+			int x = 0;
+			int y = 0;
+		
+      
+            boolean checkMultiple = false;
+			if (n > m) {
+                int temp = n;
+                n = m;
+                m = temp;
+            }
+			// 최대공약수 n,m
+			x = gcd(n,m);
+            
+			// 최소공배수 n,m
+            y= m*n/x;
+            
+			answer[0] = x;
+			answer[1] = y;
+			return answer;
+		}
+	}
