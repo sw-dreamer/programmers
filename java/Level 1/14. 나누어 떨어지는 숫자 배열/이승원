@@ -1,0 +1,22 @@
+package practices.lib;
+import java.util.ArrayList;
+import java.util.Collections;
+public class Solution {
+   public static ArrayList<Integer> solution(int[] arr, int divisor) {
+   	boolean discriminator = false;
+   	ArrayList<Integer> answer = new ArrayList<>();
+   	
+   	for(int temp : arr) {
+   		if(temp % divisor == 0){
+   			answer.add(temp);
+   			discriminator = true;
+   		}
+   	}
+   	while(discriminator) {
+   		Collections.sort(answer);	// 컬렉션 오브젝트 오름차순 나열 메소드
+   		return answer;
+   	}
+   	answer.add(-1);
+       return answer;
+   }
+}

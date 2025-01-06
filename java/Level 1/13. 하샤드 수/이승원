@@ -1,0 +1,15 @@
+public class Solution {
+	public boolean solution(int x) {
+		String digitSumString;
+		int digitSum = 0;
+		digitSumString = String.valueOf(x); // x 리터럴 스트링으로 변환
+		for (int temp : digitSumString.toCharArray()) { // 스트링의 각 인덱스 리터럴을 temp에 반복 저장
+			digitSum += Character.getNumericValue(temp); // 한 번 iterate 할 때 마다 각 인덱스의 리터럴(temp)을 digitSum에 가산
+		}
+		if (x % digitSum == 0) { // x/digitSum이 하샤드수인지 확인
+			return true; // 맞으면 true
+		} else {
+			return false;
+		} // 아니면 false
+	}
+}

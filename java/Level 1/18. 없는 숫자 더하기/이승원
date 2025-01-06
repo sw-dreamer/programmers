@@ -1,0 +1,20 @@
+package practices.lib;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Solution {
+	public int solution(int[] numbers) {
+		ArrayList<Integer> intArrays = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+		int answer = 0;
+		for (int num : numbers) {
+			if (intArrays.size() == 0) {	// 1-9까지 모든 숫자가 지워진 경우 합이 0이므로 0 리턴
+				return answer;
+			} else {
+				intArrays.remove(Integer.valueOf(num));	// Integer.valueOf() method를 쓰는 이유 -> remove()에 int를 parameter로 넘겨줄 경우 해당 literal을 index number로 받아들인다. 즉 해당 인덱스 값을 지운다는 뜻. 그러므로 num literal을 object로 boxing하여야 한다.
+			}
+		}
+		for (int temp : intArrays) {
+			answer += temp;
+		}
+		return answer;
+	}
+}

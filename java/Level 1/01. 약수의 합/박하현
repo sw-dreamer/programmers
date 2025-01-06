@@ -1,0 +1,20 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int sum = 0;
+        // n은 3000이하의 정수
+        boolean intn = (n<=3000 && n>=0);
+        while(intn) {
+
+
+        for(int i = 1 ; i <= n ; i++){
+            if(n%i==0) {
+                sum = sum + i;
+            } else {
+                continue;
+            }
+        }
+            intn = false;
+        }        return sum;
+    }
+}

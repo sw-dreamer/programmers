@@ -1,0 +1,21 @@
+class Solution {
+    public boolean solution(int x) {
+        boolean answer = true;
+        String m = String.valueOf(x);
+		int[] o = new int[m.length()];
+		int sum = 0;
+		for(int i = 0 ; i < m.length(); i++) {
+			o[i] = m.charAt(i) -'0';
+			sum = sum + o[i];
+		}
+		
+		if(x%sum == 0){
+            answer = true;
+		} else {
+            answer = false;
+        }
+        
+        
+        return answer;
+    }
+}

@@ -1,0 +1,21 @@
+package practices.lib;
+
+public class Solution {
+    public String solution(String phone_number) {
+        int digits = 0;
+        String answer = "";
+        
+        char[] numberArrays = phone_number.toCharArray();
+        
+        digits = numberArrays.length;
+        
+        for(int i = 0 ; i<digits-4 ; i++) {
+        	numberArrays[i] = '*';
+        }
+        
+        answer = String.valueOf(numberArrays);
+        // 처음엔 'answer = numberArrays.toString();'이라고 써서 '[C@hashcode'와 같은 주소값이 반환되었다. literal value 그 자체를 담고 싶은 것이라면,
+        // `new String(charArray)`, 혹은 `String.valueOf(charArray)`를 사용하자!
+        return answer;
+    }
+}

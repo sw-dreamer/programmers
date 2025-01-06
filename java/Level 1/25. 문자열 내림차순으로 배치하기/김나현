@@ -1,0 +1,30 @@
+class Solution {
+    public String solution(String s) {
+       char[] charArray = s.toCharArray();
+        
+        for(int i=0; i<charArray.length-1;i++){
+            for(int j=i+1;j<charArray.length;j++){
+                boolean change = false; // 자리교환
+                
+                //소문자가 대문자보다 크도록 비교하기
+                if((charArray[i])>= 'A' && charArray[i] <= 'Z' && (charArray[j] >= 'a' && charArray[j] <= 'z')) {
+                    change = true;
+                }else if((charArray[i])>= 'a' && charArray[i] <= 'z' && (charArray[j] >= 'A' && charArray[j] <= 'Z')) {
+                    change = false;
+                }else if(charArray[i] < charArray[j]){
+                    change = true;
+                }
+                if(change) {
+                    char temp = charArray[i];
+                    charArray[i] = charArray[j];
+                    charArray[j] = temp;
+                }
+            }
+        }
+        String result = "";
+        for(int i=0;i<charArray.length;i++){
+            result = result + charArray[i];
+        }
+        return result;
+    }
+}

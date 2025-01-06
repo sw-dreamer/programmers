@@ -1,0 +1,13 @@
+class Solution {
+    public String solution(String[] seoul) {
+        int answerNum = 0;
+        for(int i = 0; i < seoul.length; i++){
+            if(seoul[i].equals("Kim")){ // ==는 참조형 이므로 , equals를 해야함
+                answerNum = i;
+                break;
+            }
+        }
+        String answer = "김서방은 " + answerNum + "에 있다";
+        return answer;
+    }
+}

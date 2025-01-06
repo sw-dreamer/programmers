@@ -1,0 +1,30 @@
+class Solution {
+	    public String solution(String s) {
+	        String answer = "";
+	        String[] s_split = s.split(" ");
+	        for (int i = 0; i < s_split.length; i++) {
+	            String word = s_split[i];  
+	            String newWord = ""; 
+
+	            for (int j = 0; j < word.length(); j++) {
+	                char ch = word.charAt(j);
+	                if (j % 2 == 0) {
+	                    newWord += Character.toUpperCase(ch);
+	                } else {
+	                    newWord += Character.toLowerCase(ch);
+	                }
+	            }
+                if(i<s_split.length-1){
+                    answer += newWord + " "; 
+                }else{
+                    answer += newWord;
+                }
+	        }
+            if(answer.length() != s.length()){
+                for(int i =0;i<s.length()-answer.length()+1;i++){
+                    answer = answer + " ";
+                }
+            }
+	        return answer;
+	    }
+	}

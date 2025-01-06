@@ -1,0 +1,11 @@
+class Solution {
+    public int solution(int[] numbers) {
+        int sum = 45; // 0~9까지 합
+        int number = 0; // numbers 배열의 합
+        
+        for(int i=0;i<numbers.length; i++){
+            number = number + numbers[i];
+        }
+        return sum - number;
+    }
+}

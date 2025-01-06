@@ -1,0 +1,20 @@
+class Solution {
+    public long solution(int price, int money, int count) {
+        if(price<1 || price > 2500 || money<1 || money > 1000000000 || count<1 || count>2500){
+            return 0;
+        }
+        
+        long cost = 0;
+        
+        for(int i=1;i<=count;i++){
+            cost += (long)price * i;
+        }
+        
+        if(cost>money){
+            return cost - money; //부족한 금액 반환
+        }else{
+            return 0;
+        }
+
+    }
+}

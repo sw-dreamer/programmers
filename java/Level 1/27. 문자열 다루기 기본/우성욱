@@ -1,0 +1,18 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+class Solution {
+	public boolean solution(String s) {
+		boolean answer = true;
+        if (s.length() != 4 && s.length() != 6) {
+            answer=false;
+        }else{
+            String a = "^[0-9]+$";
+            Pattern pattern = Pattern.compile(a);
+            Matcher matcher = pattern.matcher(s);
+            answer = matcher.matches();    
+        }
+		
+		return answer;
+	}
+}

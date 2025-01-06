@@ -1,0 +1,11 @@
+class Solution {
+    public long solution(long n) {
+        //n의 제곱근 계산
+        for(long x = 1;x*x<=n;x++){
+            if(x*x == n){//x의 제곱이 n이면
+                return (x+1) * (x+1);
+            }
+        }
+       return -1;
+    }
+}

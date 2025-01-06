@@ -1,0 +1,18 @@
+class Solution {
+    public boolean solution(String s) {
+        boolean answer = true;
+        boolean dig = true;
+        
+		for(int i = 0 ; i < s.length() ; i ++ ){
+		dig = Character.isDigit(s.charAt(i));
+        if(dig == true && (s.length() == 4 || s.length() == 6)) {
+        answer = true;
+        }
+		else if(dig == false || s.length() != 4 || s.length() != 6){
+        answer = false;
+		break;
+		} 
+            
+        }return answer;
+    }
+}

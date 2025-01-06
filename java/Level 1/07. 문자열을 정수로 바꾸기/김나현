@@ -1,0 +1,23 @@
+class Solution {
+    public int solution(String s) {
+        if(s.length()<1 || s.length()>5){
+            return 0;
+        }
+        int Index = 0;
+        if(s.charAt(0)=='+'||s.charAt(0)=='-'){
+            Index =1;
+        }
+        if(Index<s.length()&&s.charAt(Index)=='0'){
+            return 0;
+        }
+        for(int i=Index;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c<'0'||c>'9'){
+                return 0;
+            }
+        }
+        int answer = Integer.parseInt(s);
+        return answer;
+
+    }
+}

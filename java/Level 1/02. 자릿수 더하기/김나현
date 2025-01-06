@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        if(n<1||n>100000000){
+            return 0; // 범위 벗어나면 0 출력
+        }
+        
+        int answer = 0;
+        
+        while(n>0){
+            answer = answer + n%10; //마지막 자릿수 더하기
+                n = n/10; // 마지막 자릿수 없애기
+        }
+        return answer;
+    }
+}

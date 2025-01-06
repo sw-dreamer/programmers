@@ -1,0 +1,11 @@
+class Solution {
+    public String solution(String phone_number) {
+        StringBuilder answer = new StringBuilder(phone_number);
+		
+		for(int i = phone_number.length() -5 ; i >= 0; i--){
+			answer.setCharAt(i, '*');
+		}
+				
+        return answer.toString();
+    }
+}
