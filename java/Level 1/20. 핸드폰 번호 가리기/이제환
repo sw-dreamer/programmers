@@ -1,0 +1,21 @@
+class Solution {
+    public String solution(String phone_number) {
+        char [] stringChar = new char[phone_number.length()];
+        
+        int nLength = phone_number.length();
+        
+        for(int i = nLength - 1; i > nLength -5; i--){
+            stringChar[i] = phone_number.charAt(i);
+        }
+        
+        for(int i = 0; i < nLength -4; i++) {
+          stringChar[i] = '*';
+        }
+        
+        String answer = "";
+        for(int i = 0; i < nLength; i++ ){
+            answer += stringChar[i];
+        }
+        return answer.toString();
+    }
+}
