@@ -1,0 +1,19 @@
+name: Deny Delete
+
+on:
+  push:
+    branches:
+      - main  # 삭제 방지하려는 브랜치
+
+jobs:
+  prevent-delete:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Check for file deletions
+        run: |
+          if git diff --name-status HEAD^ | grep '^D'; then
+            echo "파일 삭제가 감지되었습니다. 삭제는 금지되어 있습니다!"
+            exit 1
+          fi
