@@ -1,0 +1,18 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int min = n+1;
+        if(n<3 || n >1000000){
+            answer = -1;
+        }
+        for (int i = 1; i < n; i++) {
+            if (n % i == 1) {
+                min = i;
+                break;
+            }
+        }
+        answer = min;
+        
+        return answer;
+    }
+}
