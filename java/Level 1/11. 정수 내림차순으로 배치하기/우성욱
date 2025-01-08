@@ -1,0 +1,33 @@
+class Solution {
+    public static void bubbleSort(int[] a) {
+        int n = a.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] < a[j + 1]) { 
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+    }
+    public long solution(long n) {
+        long answer = 0;
+        int count = 0;
+        long temp = n;  
+        while (temp > 0) {
+            count++;
+            temp = temp / 10;
+        }
+        int[] temp_answer = new int[count];
+        for (int i = 0; i < count; i++) {
+            temp_answer[i] = (int) (n % 10);
+            n = n / 10;
+        }
+        bubbleSort(temp_answer);
+        for (int i = 0; i < count; i++) {
+            answer = answer * 10 + temp_answer[i];
+        }
+        return answer;
+    }
+}
