@@ -33,7 +33,12 @@ GitHub에서 관리하는 리포지토리를 주기적으로 백업하고, 변�
 
 백업 스크립트는 매일 18시에 진행됩니다.
 
-![image](https://github.com/user-attachments/assets/af3ae1d3-7ae9-45f9-a0cd-c8f825c87c8f)
+ - 백업 폴더
+ ![image](https://github.com/user-attachments/assets/af3ae1d3-7ae9-45f9-a0cd-c8f825c87c8f)
+
+ - 로그 파일 예시
+  ![image](https://github.com/user-attachments/assets/6545f7f6-32f6-4c08-8d2f-df74d9dadf5d)
+
 
  - 백업 작업의 주요 목적은 다음과 같습니다:
 
