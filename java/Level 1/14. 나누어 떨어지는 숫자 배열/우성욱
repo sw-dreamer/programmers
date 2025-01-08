@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        int[] answer = {};
+        int count = 0;
+        Arrays.sort(arr);
+        for (int num : arr) {
+            if (num % divisor == 0) {
+                count++;
+            }
+        }
+         if (count == 0) {
+             return new int[] {-1};
+        }else{
+             int[] new_answer = new int[count];
+             int index = 0;
+             for (int num : arr) {
+                 if (num % divisor == 0) {
+                     new_answer[index++] = num;
+                 }
+             }
+             answer = new_answer;
+         }
+        return answer;
+    }
+}
