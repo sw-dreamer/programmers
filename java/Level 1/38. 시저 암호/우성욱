@@ -1,0 +1,23 @@
+class Solution {
+    public String solution(String s, int n) {
+        String answer = "";
+        int range =0;
+        // 65=>A, 90=>Z, 97=>a, 122=>z
+         for (int i = 0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if (ch == ' '){
+                answer += ch;
+                continue;
+            } 
+             if (Character.isUpperCase(ch)) {
+                 range = 65;
+             } else {
+                 range = 97;
+             }
+
+            int result = (ch - range + n) % 26;
+            answer += (char) (range + result);
+        }
+        return answer;
+    }
+}
