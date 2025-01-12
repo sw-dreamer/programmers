@@ -1,0 +1,16 @@
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        int length = s.length();
+        
+        if(length % 2 == 0){
+            answer = s.substring(length / 2 - 1, length / 2 + 1);
+        }else {
+            answer = Character.toString(s.charAt(length / 2));
+        }
+        return answer;
+    }
+}
+
+// substring(start index(포함),end index(미포함)); substring(부터~ , ~까지) 있는 문자 추출
+// Character.toString() 한 문자char(기본형)를 String(참조형)으로 변환 메소드 or String.valueOf()
