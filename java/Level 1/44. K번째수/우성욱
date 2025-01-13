@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+class Solution {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] result = new int[commands.length];
+
+       
+        for (int i = 0; i < commands.length; i++) {
+            int[] commandsArr = commands[i];
+            int start = commandsArr[0] - 1; 
+            int end = commandsArr[1];
+            int k = commandsArr[2] - 1; 
+
+            int[] slicedArray = Arrays.copyOfRange(array, start, end);
+            Arrays.sort(slicedArray);
+
+            result[i] = slicedArray[k];
+        }
+        
+        return result;
+    }
+}
