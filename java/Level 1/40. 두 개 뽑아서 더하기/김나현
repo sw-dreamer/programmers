@@ -1,0 +1,46 @@
+class Solution {
+	    public int[] solution(int[] numbers) {
+	       int n = numbers.length;
+	        
+	        int[] temp = new int[n*(n-1)/2];
+	        int index = 0;
+	        
+	        for(int i=0;i<n;i++){
+	            for(int j=i+1;j<n;j++){
+	                temp[index++] = numbers[i] + numbers[j];
+	            }
+	        }
+	        int[] k = new int[index];
+	        int kSize = 0;
+	        
+	        for(int i=0;i<index;i++){
+	            boolean Duplicate  = false;
+	            
+	            for(int j=0;j<kSize;j++){
+	                if(temp[i] == k[j]){
+	                    Duplicate = true;
+	                    break;
+	                }
+	            }
+	            if(!Duplicate){
+	                k[kSize++] = temp[i];
+	            }
+	        }
+	        
+			for(int i=1;i<kSize;i++){
+	            int l = k[i];
+	            int j = i-1;
+	            
+	            while(j>=0 && k[j]>l){
+	                k[j+1] = k[j];
+	                j--;
+	            }
+	            k[j+1] = l;
+	        }
+	        int[] answer = new int[kSize];
+	        for(int i=0;i<kSize;i++){
+	            answer[i] = k[i];
+	        }
+	        return answer;
+	    }
+	}
