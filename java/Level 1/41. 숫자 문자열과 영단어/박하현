@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+	    String[] name = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+	    for (int i = 0; i < 10; i++) {
+		    if (s.contains(name[i])) {
+			    String temp = Integer.toString(i);
+			    s = s.replaceAll(name[i], temp);
+		    }
+
+	    }
+	    answer = Integer.parseInt(s);
+      return answer;
+    }
+}
