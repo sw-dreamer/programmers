@@ -1,0 +1,14 @@
+class Solution {
+    public int solution(int a, int b, int n) {
+        if (n < a) {
+            return 0; 
+        }
+        
+        int cola = (n / a) * b;
+      
+        int bottles = n % a + (n / a) * b;
+        
+        int answer =  cola + solution(a, b, bottles);
+        return answer;
+    }
+}
