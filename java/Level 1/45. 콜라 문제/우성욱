@@ -3,12 +3,9 @@ class Solution {
         if (n < a) {
             return 0; 
         }
-        
         int cola = (n / a) * b;
-      
-        int bottles = n % a + (n / a) * b;
-        
-        int answer =  cola + solution(a, b, bottles);
+        int bottle = n % a + (n / a) * b;
+        int answer =  cola + solution(a, b, bottle);
         return answer;
     }
 }
