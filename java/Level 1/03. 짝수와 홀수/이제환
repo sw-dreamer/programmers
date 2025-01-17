@@ -1,0 +1,9 @@
+class Solution {
+    public String solution(int num) {
+// 삼항 연산자 조건 : 숫자를 2로 나눴을때 = 0 이면 짝수
+// 조건 (num%2==0), num을 2로 나눴을때 0이면(true면) → Even
+// 조건 (num%2==0), num을 2로 나눴을때 0이 아니면(false면) → Odd
+    	String answer = (num%2==0)?"Even":"Odd";
+        return answer;
+    }
+}
