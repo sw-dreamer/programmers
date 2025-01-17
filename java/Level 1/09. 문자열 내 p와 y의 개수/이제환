@@ -1,0 +1,28 @@
+class Solution {
+    boolean solution(String s) {
+        boolean answer = true;
+// 문자열 s에서 ‘p’,’P’가 발견되는 개수를 저장할 변수
+        int psum = 0;
+// 문자열 s에서 ‘y’,’Y’가 발견되는 개수를 저장할 변수
+        int ysum = 0;
+        
+// p,P나 y,Y의 개수를 찾는 반복문
+        for(int i=0; i < s.length(); i++){
+// char타입 c에 s 문자열(i번째)을 대입
+            char c = s.charAt(i);
+// 저장한 문자와 비교연산 p or P가 같으면 psum+1
+            if(c == 'p' || c == 'P'){
+                psum++;
+            }
+// 저장한 문자와 비교연산 y or Y가 같으면 ysum+1
+            if(c == 'y' || c == 'Y'){
+                ysum++;
+            }
+        }
+// psum의 저장된 개수와 ysum에 저장된 개수가 다르면 false
+        if(psum != ysum){
+            answer = false;
+        }
+        return answer;
+    }
+}
