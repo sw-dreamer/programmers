@@ -1,0 +1,14 @@
+class Solution {
+    public long[] solution(int x, int n) {
+// long 배열 선언 및 배열 길이를 n값으로 초기화
+        long[] answer = new long[n];
+// 배열 answer의 0번 index 값은 x 값이 고정이므로 미리 넣음
+       answer[0] = x;
+ // x씩 증가하는 n개의 리스트 반복문
+        for (int i = 1; i < n; i++) {
+// 이전의 index 값에 x를 더해서 순차적 index에 값 저장
+            answer[i] = answer[i - 1] + x; 
+        }
+        return answer;
+    }
+}
