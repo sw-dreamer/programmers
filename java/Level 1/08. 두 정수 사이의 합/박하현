@@ -1,0 +1,21 @@
+class Solution {
+    public long solution(int a, int b) {
+        
+        boolean limit = (a>=-10000000 && a <= 10000000 && b>=-10000000 && b <= 10000000);
+        long sum = 0;
+        if(limit) {
+        long c = Math.abs(a-b);
+		for(int i = 0 ; i < c+1 ; i++) {
+			if(a < b) {
+				long answer = (long)(a + i);
+				sum = (long)(sum + answer);
+			} else if(a > b) {
+				long answer = (long)(b+ i);
+				sum = (long)(sum + answer);
+			} else {
+                sum = (long)a;
+            }
+		}
+        }return sum;
+    }
+}
