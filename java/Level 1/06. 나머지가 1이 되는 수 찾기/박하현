@@ -1,0 +1,14 @@
+class Solution {
+    public int solution(int n) {
+		int min = n+1;
+		for(int i = 1; i < n ; i++) {
+			if(n%i == 1 && min > i) {
+					min = i;
+				}
+			else{
+				continue;
+			}
+        
+    }return min;
+}
+}
