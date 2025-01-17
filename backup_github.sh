@@ -68,7 +68,11 @@ if [ -d "$BACKUP_PATH/.git" ]; then
 
     if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
         log_message "Changes detected. Performing git pull..."
-        sudo git pull origin main
+
+        # git pull 수행하고 출력 결과를 로그에 기록
+        PULL_OUTPUT=$(sudo git pull origin main 2>&1)
+        log_message "$PULL_OUTPUT"
+        
         if [ $? -ne 0 ]; then
             log_message "Error: Git pull failed in '$BACKUP_PATH'."
             exit 1
@@ -77,6 +81,32 @@ if [ -d "$BACKUP_PATH/.git" ]; then
         fi
     else
         log_message "No changes detected. Skipping git pull."
+    fi
+
+    # 변경 사항 (추가, 삭제, 수정) 로그에 기록
+    CHANGES=$(git status --short)
+    if [ -n "$CHANGES" ]; then
+        log_message "Changes detected in the repository:"
+        echo "$CHANGES" | while read line; do
+            FILE_STATUS=$(echo $line | awk '{print $1}')
+            FILE_NAME=$(echo $line | awk '{print $2}')
+            case $FILE_STATUS in
+                "A")
+                    log_message "Added: $FILE_NAME"
+                    ;;
+                "M")
+                    log_message "Modified: $FILE_NAME"
+                    ;;
+                "D")
+                    log_message "Deleted: $FILE_NAME"
+                    ;;
+                *)
+                    log_message "Unknown status: $line"
+                    ;;
+            esac
+        done
+    else
+        log_message "No changes detected in repository files."
     fi
 else
     # Git 리포지토리가 없으면 git clone 수행
