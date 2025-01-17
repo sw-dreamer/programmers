@@ -1,0 +1,28 @@
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+        long sum = 0; // 합을 저장할 변수 선언 및 초기화
+// int a 와 int b 중 최소값과 최대값을 구분 하기 위한 변수 생성
+        int lowNumber = 0; // 최소값 저장 변수
+        int highNumber = 0; // 최대값 저장 변수
+        if(a < b){ // a가 b보다 작을 경우(true이면)
+           lowNumber = a;
+            highNumber = b;
+        }else { // false 이면
+            lowNumber = b;
+            highNumber = a;
+        }
+// 최소값에서 최대값 사이의 수의 합을 구하는 반복문
+        for(int i = lowNumber; i <= highNumber; i++){
+            sum = sum + i;
+        }
+        answer = sum;
+        return answer;
+    }
+}
+
+/*
+Math.min(x , y), Math.max(x , y) 메소드를 사용 하면 if 문을 안쓰고 최소값, 최대값을 바로 알수 있음
+int lowNumber = Math.min(a, b);  // a와 b의 최소값을 lowNumber로 설정
+int highNumber = Math.max(a, b); // a와 b의 최대값을 highNumber로 설정
+*/
