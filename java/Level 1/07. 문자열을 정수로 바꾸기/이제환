@@ -1,0 +1,8 @@
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+// s문자열을 int 타입이으로 변환 후 answer에 저장
+        answer = Integer.parseInt(s);
+        return answer;
+    }
+}
