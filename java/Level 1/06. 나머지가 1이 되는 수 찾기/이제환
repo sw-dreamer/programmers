@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0; // 가장 작은 자연수 x 값 저장할 변수
+// n을 x로 나눴을때 나머지가 1인 경우를 찾는 반복문
+        for (int i = 1; i <= n; i++) {
+             if (n % i == 1) { // n을 1부터 순차적으로 나눈뒤 나머지가 1일 경우를 찾는 조건문
+                 answer = i; // i로 나눴을때 나머지가 1이되는 i를 x값으로 저장
+                 break; // 가장 작은 자연수를 구해야 되는데
+                            // 조건이 true 첫 번째 수가 x값이기 때문에 찾으면 바로 반복문 종료
+                            // break 안하면 error : 이유는 가장 큰 자연수를 반환 함?
+             }
+        }
+        return answer;
+    }
+}
