@@ -70,7 +70,7 @@
 
 ---
 
-### **🔰 Level 2 - 중급 문제 풀이**  
+### **🔰 Level 2 - [중급 문제 풀이](https://github.com/sw-dreamer/programmers/tree/main/MySQL/Level%202)**  
 **레벨 2**는 SQL에서 좀 더 발전된 형태의 문제들입니다. **JOIN**, **GROUP BY**, **HAVING** 등을 활용하여 더 복잡한 데이터를 처리하는 문제들이 포함됩니다.
 
 #### 예시 문제:
