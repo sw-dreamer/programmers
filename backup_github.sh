@@ -17,7 +17,7 @@ log_message() {
     echo "$1" | tee -a "$LOG_PATH"
 }
 
-# 날짜 기반으로 백업 디렉터리 이름 생성
+# 날짜 기반으로 백업 디렉터리 이름 생성 (시간 정보 제거)
 DATE=$(date +'%Y-%m-%d')  # '2025-01-08' 형식
 BACKUP_PATH="$BACKUP_DIR/backup_$DATE"
 
@@ -67,25 +67,13 @@ if [ -d "$BACKUP_PATH/.git" ]; then
     REMOTE_COMMIT=$(git rev-parse origin/main)
 
     if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
-        log_message "Changes detected. Creating a new backup folder..."
-
-        # 새로운 날짜와 시간을 포함한 새로운 백업 디렉터리 생성
-        NEW_BACKUP_PATH="$BACKUP_DIR/backup_$DATE-$(date +'%H-%M-%S')"
-        sudo mkdir -p "$NEW_BACKUP_PATH"
+        log_message "Changes detected. Performing git pull..."
+        sudo git pull origin main
         if [ $? -ne 0 ]; then
-            log_message "Error: Failed to create new backup directory '$NEW_BACKUP_PATH'. Exiting."
-            exit 1
-        fi
-        log_message "New backup directory '$NEW_BACKUP_PATH' created."
-
-        # 새로운 디렉터리로 리포지토리 클론
-        log_message "Cloning repository into new backup directory..."
-        sudo git clone $REPO_URL "$NEW_BACKUP_PATH"
-        if [ $? -ne 0 ]; then
-            log_message "Error: Git clone failed in new directory."
+            log_message "Error: Git pull failed in '$BACKUP_PATH'."
             exit 1
         else
-            log_message "Git clone successful into '$NEW_BACKUP_PATH'."
+            log_message "Git pull successful."
         fi
     else
         log_message "No changes detected. Skipping git pull."
