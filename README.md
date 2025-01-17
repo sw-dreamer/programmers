@@ -35,7 +35,8 @@ GitHub에서 관리하는 리포지토리를 주기적으로 백업하고, 변�
 
  - 백업 폴더
    
- ![image](https://github.com/user-attachments/assets/a462d645-114c-4d0f-bb8c-34a8b7fc5a35)
+ ![image](https://github.com/user-attachments/assets/f5cc968b-8f8e-4f12-b3d5-8f344511854b)
+
 
 
  - 로그 파일 예시
