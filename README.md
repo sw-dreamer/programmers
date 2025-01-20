@@ -41,7 +41,8 @@ GitHub에서 관리하는 리포지토리를 주기적으로 백업하고, 변�
 
  - 로그 파일 예시
    
- ![image](https://github.com/user-attachments/assets/41012aba-b01f-4f64-8b64-5faa42de33f2)
+ ![image](https://github.com/user-attachments/assets/4b1d640f-0734-4dcc-a497-4daf59242378)
+
 
 
 
