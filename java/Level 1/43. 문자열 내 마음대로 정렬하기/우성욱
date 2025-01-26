@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Solution {
+    private void swap(String[] strings, int i, int j) {
+        String temp = strings[i];
+        strings[i] = strings[j];
+        strings[j] = temp;
+    }
+
+    private void recursiveSort(String[] strings, int n, int index) {
+        if (index >= strings.length - 1) {
+            return;
+        }
+
+        for (int j = index + 1; j < strings.length; j++) {
+            if (strings[index].charAt(n) > strings[j].charAt(n)) {
+                swap(strings, index, j);
+            } else if (strings[index].charAt(n) == strings[j].charAt(n)) {
+                if (strings[index].compareTo(strings[j]) > 0) {
+                    swap(strings, index, j);
+                }
+            }
+        }
+
+        recursiveSort(strings, n, index + 1);
+    }
+
+    public String[] solution(String[] strings, int n) {
+        recursiveSort(strings, n, 0);
+        return strings;
+    }
+}
