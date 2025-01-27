@@ -1,0 +1,20 @@
+class Solution {
+    public String solution(int[] food) {
+       StringBuilder left = new StringBuilder();
+        
+        for(int i=1;i<food.length;i++){
+            int count = food[i] / 2; 
+            for(int j=0;j<count;j++){
+                left.append(i);
+            }
+        }
+        String center = "0";
+        
+        StringBuilder right = new StringBuilder();
+        
+        for(int k=left.length()-1;k>=0;k--){
+            right.append(left.charAt(k));
+        }
+        return left.toString() + center + right.toString();
+    }
+}
